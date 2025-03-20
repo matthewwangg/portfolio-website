@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Enable trailing slashes for static export
+    output: "export",
+    basePath: "/portfolio-website",
+    assetPrefix: "/portfolio-website/",
     trailingSlash: true,
 };
 
