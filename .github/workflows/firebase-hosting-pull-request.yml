@@ -16,6 +16,7 @@ jobs:
       - run: cd portfolio-app && npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          entryPoint: portfolio-app
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_WEBSITE_B042F }}
           projectId: portfolio-website-b042f
