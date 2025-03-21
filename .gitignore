@@ -11,6 +11,8 @@
 
 # next.js
 /portfolio-app/.next/
+/portfolio-app/404
+/portfolio-app/404.html
 
 # production
 /portfolio-app/build
