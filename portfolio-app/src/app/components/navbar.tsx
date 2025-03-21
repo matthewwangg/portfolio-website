@@ -10,13 +10,13 @@ function Navbar() {
             background: "#ffffff",
             width: "100%"
         }}>
-            <div style={{ display: "flex", gap: "1rem", fontSize: "1.25rem" }}>
-                <a href="/school" style={{ marginRight: "1rem", color: "#FBBC05" }}>School</a>
-                <a href="/projects" style={{ color: "#34A853" }}>Projects</a>
+            <div style={{display: "flex", gap: "1rem", fontSize: "1.25rem"}}>
                 <a href="#hero" style={{marginRight: "1rem", color: "#4285F4"}}>Home</a>
                 <a href="#work" style={{marginRight: "1rem", color: "#EA4335"}}>Work</a>
+                <a href="#school" style={{marginRight: "1rem", color: "#FBBC05"}}>School</a>
+                <a href="#projects" style={{color: "#34A853"}}>Projects</a>
             </div>
-            <div style={{ display: "flex", gap: "1rem" }}>
+            <div style={{display: "flex", gap: "1rem"}}>
                 <a href="https://instagram.com/matthewiwang" target="_blank">
                     <FaInstagram size={28} style={{ color: "#4285F4" }} />
                 </a>
