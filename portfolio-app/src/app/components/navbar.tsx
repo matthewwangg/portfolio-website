@@ -4,6 +4,7 @@ function Navbar() {
     return (
         <nav style={{
             position: "fixed",
+            zIndex: 1000,
             display: "flex",
             justifyContent: "space-between",
             padding: "1rem 2rem",

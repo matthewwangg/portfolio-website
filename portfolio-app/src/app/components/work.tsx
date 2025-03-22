@@ -41,7 +41,7 @@ function Work() {
                         key={index}
                         style={{
                             position: "relative",
-                            marginBottom: "2.5rem", // Slightly reduced margin to balance spacing
+                            marginBottom: "2.5rem",
                             textAlign: "center",
                             maxWidth: "600px",
                         }}

@@ -10,7 +10,7 @@ const groupedCourses = courses.reduce((acc, course) => {
 }, {} as Record<string, typeof courses>);
 
 function Courses() {
-    const [open, setOpen] = useState<string | null>("Core CS");
+    const [open, setOpen] = useState<string | null>("");
 
     const toggle = (category: string) => {
         setOpen(open === category ? null : category);
@@ -20,7 +20,7 @@ function Courses() {
         <section
             id="courses"
             style={{
-                minHeight: "100vh",
+                height: "100vh",
                 padding: "6rem 2rem",
                 background: "#ffffff",
                 display: "flex",
@@ -33,13 +33,13 @@ function Courses() {
                     fontSize: "3.5rem",
                     fontWeight: "bold",
                     color: "#202124",
-                    marginBottom: "3rem",
+                    marginBottom: "1.5rem",
                 }}
             >
                 Coursework
             </h2>
 
-            <div style={{ width: "100%", maxWidth: "900px", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <div style={{ width: "100%", maxWidth: "900px", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                 {Object.entries(groupedCourses).map(([category, courseList]) => (
                     <div
                         key={category}
