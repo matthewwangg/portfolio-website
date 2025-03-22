@@ -1,16 +1,33 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { experiences } from "../data/work";
 
 function Work() {
+    const [isCompact, setIsCompact] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsCompact(window.innerWidth < 1000);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <section
             id="work"
             style={{
                 display: "flex",
+                flexDirection: isCompact ? "column" : "row",
                 alignItems: "center",
                 justifyContent: "center",
-                height: "100vh",
                 background: "#ffffff",
-                padding: "6rem 8rem 4rem 8rem", 
+                padding: isCompact ? "4rem 2rem" : "6rem 8rem 4rem 8rem",
+                minHeight: "100vh",
+                boxSizing: "border-box",
             }}
         >
             <div
@@ -19,23 +36,34 @@ function Work() {
                     fontSize: "3.5rem",
                     fontWeight: "bold",
                     color: "#202124",
-                    textAlign: "right",
-                    paddingRight: "3rem",
+                    textAlign: isCompact ? "center" : "right",
+                    paddingRight: isCompact ? 0 : "3rem",
                     lineHeight: "1.2",
+                    marginBottom: isCompact ? "2rem" : 0,
                 }}
             >
                 Work <br /> Experience
             </div>
+
             <div
                 style={{
-                    width: "4px",
-                    background: "#000",
-                    height: "50%",
-                    margin: "0 3rem",
+                    width: isCompact ? 0 : "4px",
+                    background: isCompact ? "transparent" : "#000",
+                    height: isCompact ? 0 : "350px",
+                    margin: isCompact ? "0" : "0 3rem",
                     borderRadius: "2px",
                 }}
             ></div>
-            <div style={{ flex: 2, paddingLeft: "3rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
+
+            <div
+                style={{
+                    flex: 2,
+                    paddingLeft: isCompact ? 0 : "3rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                }}
+            >
                 {experiences.map((exp, index) => (
                     <div
                         key={index}

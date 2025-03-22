@@ -20,7 +20,7 @@ function Courses() {
         <section
             id="courses"
             style={{
-                height: "100vh",
+                minHeight: "100vh",
                 padding: "6rem 2rem",
                 background: "#ffffff",
                 display: "flex",
