@@ -25,7 +25,7 @@ function Work() {
                 alignItems: "center",
                 justifyContent: "center",
                 background: "#ffffff",
-                padding: isCompact ? "4rem 2rem" : "6rem 8rem 4rem 8rem",
+                padding: "6rem 8rem",
                 minHeight: "100vh",
                 boxSizing: "border-box",
             }}
@@ -42,7 +42,7 @@ function Work() {
                     marginBottom: isCompact ? "2rem" : 0,
                 }}
             >
-                Work <br /> Experience
+                Work <br /> {!isCompact && "Experience"}
             </div>
 
             <div

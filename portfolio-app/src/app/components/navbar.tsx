@@ -39,25 +39,25 @@ function Navbar() {
                     justifyContent: isCompact ? "center" : "flex-start",
                     alignItems: "center",
                     gap: "1.25rem",
-                    fontSize: isCompact ? "0" : "0.95rem",
+                    fontSize: isCompact ? "0" : "1.25rem",
                     flexGrow: 1,
                     minWidth: "250px",
                 }}
             >
                 <a href="#hero" style={{color: "#4285F4", display: "flex", alignItems: "center", gap: "0.4rem"}}>
-                    <FaHome size={28}/>
+                    {isCompact && <FaHome size={28}/>}
                     {!isCompact && "Home"}
                 </a>
                 <a href="#work" style={{color: "#EA4335", display: "flex", alignItems: "center", gap: "0.4rem"}}>
-                    <FaBriefcase size={28}/>
+                    {isCompact && <FaBriefcase size={28}/>}
                     {!isCompact && "Work"}
                 </a>
                 <a href="#courses" style={{color: "#FBBC05", display: "flex", alignItems: "center", gap: "0.4rem"}}>
-                    <FaBook size={28}/>
+                    {isCompact && <FaBook size={28}/>}
                     {!isCompact && "Courses"}
                 </a>
                 <a href="#projects" style={{color: "#34A853", display: "flex", alignItems: "center", gap: "0.4rem"}}>
-                    <FaFolderOpen size={28}/>
+                    {isCompact && <FaFolderOpen size={28}/>}
                     {!isCompact && "Projects"}
                 </a>
             </div>
