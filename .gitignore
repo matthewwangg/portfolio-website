@@ -37,3 +37,5 @@
 /portfolio-app/next-env.d.ts
 
 /.idea
+portfolio-app/out/404.html
+/portfolio-app/out/404
