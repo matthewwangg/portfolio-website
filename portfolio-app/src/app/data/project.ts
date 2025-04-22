@@ -28,6 +28,6 @@ export const projects: Project[] = [
         name: "Infrastructure as Code",
         description: "Let's Technologies Flask web app deployed with Gunicorn/Nginx/Docker to AWS using Terraform configs.",
         image: "/images/lets.png",
-        repo: "https://letstribe.app/",
+        repo: "https://www.letstribe.app/",
     }
 ]
