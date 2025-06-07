@@ -47,7 +47,7 @@ function Hero() {
                     maxWidth: "700px",
                 }}
             >
-                Software Engineer Intern @ Google • CS Student @ ASU
+                Software Engineer Intern @ Google • BS CS @ ASU • MS CSE @ UCSD
             </p>
         </section>
     );

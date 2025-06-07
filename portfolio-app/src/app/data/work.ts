@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
     {
         role: "Software Engineering Intern",
         company: "RevolutionParts",
-        date: "Oct 2024 - Current",
+        date: "Oct 2024 - May 2025",
         description: "Search Engine Optimization / Shipping Profitability",
     }
     /*,

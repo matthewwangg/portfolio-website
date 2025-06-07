@@ -19,15 +19,27 @@ export const projects: Project[] = [
         repo: "https://github.com/matthewwangg/epl-prediction",
     },
     {
-        name: "Go TCP Chat Server",
-        description: "Multi-threaded TCP Go chat server with support for chat rooms and direct messaging between users.",
-        image: "/images/go-chat-server.png",
-        repo: "https://github.com/matthewwangg/go-tcp-chat-server",
+        name: "Distributed Key-Value Store",
+        description: "A distributed key-value store in Go with consistent hashing, dynamic peer joins/leaves, in-memory storage, and gRPC communication.",
+        image: "/images/distributed-kv-store.png",
+        repo: "https://github.com/matthewwangg/distributed-kv-store",
     },
     {
-        name: "Infrastructure as Code",
-        description: "Let's Technologies Flask web app deployed with Gunicorn/Nginx/Docker to AWS using Terraform configs.",
+        name: "Contract Matching System",
+        description: "Let's Technologies contract matching system built with Python, Flask, AWS, Terraform, and Hugging Face models.",
         image: "/images/lets.png",
         repo: "https://www.letstribe.app/",
+    },
+    {
+        name: "Note DB",
+        description: "A fast, local-first C++ knowledge base with structured Markdown, full-text indexing, and snapshot-based backup.",
+        image: "/images/note-db.png",
+        repo: "https://github.com/matthewwangg/note-db",
+    },
+    {
+        name: "gRPC Log Aggregator",
+        description: "A gRPC-based C++ system for collecting, storing, streaming, and querying logs across services.",
+        image: "/images/grpc-log-aggregator.png",
+        repo: "https://github.com/matthewwangg/grpc-log-aggregator",
     }
 ]
