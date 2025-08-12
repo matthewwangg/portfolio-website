@@ -10,7 +10,7 @@ export const experiences: Experience[] = [
         role: "Software Engineering Intern",
         company: "Google",
         date: "May 2025 - August 2025",
-        description: "Vertex AI Search",
+        description: "Agentspace Data Insights",
     },
     {
         role: "AI/ML Engineering Intern",
