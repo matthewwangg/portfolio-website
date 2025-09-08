@@ -7,10 +7,16 @@ export type Project = {
 
 export const projects: Project[] = [
     {
-        name: "Paper Trail",
-        description: "A real-time Kanban board and notes app with a React/TypeScript web app and Go REST API.",
-        image: "/images/papertrail.png",
-        repo: "https://github.com/matthewwangg/paper-trail",
+        name: "Fit Pilot",
+        description: "A Gemini-based AI fitness coach with a React frontend, Go API, Python AI microservice, Postgres database, and Redis cache, deployed to GKE.",
+        image: "/images/fit-pilot.png",
+        repo: "https://github.com/matthewwangg/fit-pilot",
+    },
+    {
+        name: "Personal AI Agent",
+        description: "A CLI-based personal AI agent that can answer questions with personal context and accomplish complex multi-stage developer tasks autonomously.",
+        image: "/images/agent.png",
+        repo: "https://github.com/matthewwang/personal-ai-agent",
     },
     {
         name: "EPL Prediction",
@@ -25,6 +31,12 @@ export const projects: Project[] = [
         repo: "https://github.com/matthewwangg/distributed-kv-store",
     },
     {
+        name: "gRPC Log Aggregator",
+        description: "A gRPC-based C++ system for collecting, storing, streaming, and querying logs across services.",
+        image: "/images/grpc-log-aggregator.png",
+        repo: "https://github.com/matthewwangg/grpc-log-aggregator",
+    },
+    {
         name: "Contract Matching System",
         description: "Let's Technologies contract matching system built with Python, Flask, AWS, Terraform, and Hugging Face models.",
         image: "/images/lets.png",
@@ -37,9 +49,9 @@ export const projects: Project[] = [
         repo: "https://github.com/matthewwangg/note-db",
     },
     {
-        name: "gRPC Log Aggregator",
-        description: "A gRPC-based C++ system for collecting, storing, streaming, and querying logs across services.",
-        image: "/images/grpc-log-aggregator.png",
-        repo: "https://github.com/matthewwangg/grpc-log-aggregator",
-    }
+        name: "Paper Trail",
+        description: "A real-time Kanban board and notes app with a React/TypeScript web app and Go REST API.",
+        image: "/images/papertrail.png",
+        repo: "https://github.com/matthewwangg/paper-trail",
+    },
 ]
