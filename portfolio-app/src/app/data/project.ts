@@ -19,6 +19,18 @@ export const projects: Project[] = [
         repo: "https://github.com/matthewwang/personal-ai-agent",
     },
     {
+        name: "Vector Database",
+        description: "A performant in-memory vector database built from scratch in C++ with an HNSW index, data persistence via snapshotting and WAL, and replication, deployed to GKE.",
+        image: "/images/database.png",
+        repo: "https://github.com/matthewwangg/vector-database",
+    },
+    {
+        name: "Gateway",
+        description: "A secure API gateway and load balancer built in Go, with service definition parser, service management, configurable load balancer, and secure JWT authentication.",
+        image: "/images/gateway.png",
+        repo: "https://github.com/matthewwangg/gateway",
+    },
+    {
         name: "EPL Prediction",
         description: "Premier League outcome prediction with a React/Node.js web app and a Python machine learning API.",
         image: "/images/epl-predictor.png",
