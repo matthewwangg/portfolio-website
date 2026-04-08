@@ -7,10 +7,16 @@ export type Experience = {
 
 export const experiences: Experience[] = [
     {
+        role: "Software Engineer",
+        company: "Google",
+        date: "March 2026 - Current",
+        description: "Vertex AI Training Clusters",
+    },
+    {
         role: "Software Engineering Intern",
         company: "Google",
         date: "May 2025 - August 2025",
-        description: "Agentspace Data Insights",
+        description: "Gemini Enterprise Data Insights",
     },
     {
         role: "AI/ML Engineering Intern",
@@ -28,7 +34,7 @@ export const experiences: Experience[] = [
         role: "Software Engineering Intern",
         company: "RevolutionParts",
         date: "Oct 2024 - May 2025",
-        description: "Search Engine Optimization / Shipping Profitability",
+        description: "Shipping Profitability",
     }
     /*,
     {

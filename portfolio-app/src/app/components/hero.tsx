@@ -47,7 +47,7 @@ function Hero() {
                     maxWidth: "700px",
                 }}
             >
-                Incoming Software Engineer @ Google • BS CS @ ASU
+                Software Engineer @ Google • BS CS @ ASU
             </p>
         </section>
     );
