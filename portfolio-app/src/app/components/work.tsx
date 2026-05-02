@@ -1,108 +1,92 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { experiences } from "../data/work";
 
+const dotColors = ["#4285F4", "#EA4335", "#FBBC05", "#34A853"];
+
 function Work() {
-    const [isCompact, setIsCompact] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsCompact(window.innerWidth < 1000);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
     return (
         <section
             id="work"
             style={{
+                padding: "6rem 2rem",
+                backgroundColor: "#ffffff",
                 display: "flex",
-                flexDirection: isCompact ? "column" : "row",
+                flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center",
-                background: "#ffffff",
-                padding: "6rem 8rem",
-                minHeight: "100vh",
-                boxSizing: "border-box",
             }}
         >
-            <div
+            <h2
                 style={{
-                    flex: 1,
-                    fontSize: "3.5rem",
-                    fontWeight: "bold",
+                    fontSize: "2rem",
+                    fontWeight: 700,
                     color: "#202124",
-                    textAlign: isCompact ? "center" : "right",
-                    paddingRight: isCompact ? 0 : "3rem",
-                    lineHeight: "1.2",
-                    marginBottom: isCompact ? "2rem" : 0,
+                    marginBottom: "2.5rem",
+                    letterSpacing: "-0.02em",
                 }}
             >
-                Work <br /> {!isCompact && "Experience"}
-            </div>
+                Experience
+            </h2>
 
             <div
                 style={{
-                    width: isCompact ? 0 : "4px",
-                    background: isCompact ? "transparent" : "#000",
-                    height: isCompact ? 0 : "350px",
-                    margin: isCompact ? "0" : "0 3rem",
-                    borderRadius: "2px",
-                }}
-            ></div>
-
-            <div
-                style={{
-                    flex: 2,
-                    paddingLeft: isCompact ? 0 : "3rem",
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center",
+                    width: "100%",
+                    maxWidth: "600px",
+                    gap: "0",
                 }}
             >
                 {experiences.map((exp, index) => (
                     <div
                         key={index}
                         style={{
-                            position: "relative",
-                            marginBottom: "2.5rem",
-                            textAlign: "center",
-                            maxWidth: "600px",
+                            display: "flex",
+                            gap: "1.25rem",
+                            paddingBottom: index < experiences.length - 1 ? "2rem" : 0,
                         }}
                     >
-                        <div
-                            style={{
-                                fontWeight: "bold",
-                                fontSize: "1.75rem",
-                                color: "#4285F4",
-                            }}
-                        >
-                            {exp.role}{" "}
-                            <span style={{ color: "#EA4335" }}>@ {exp.company}</span>
+                        {/* Timeline */}
+                        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
+                            <div
+                                style={{
+                                    width: "10px",
+                                    height: "10px",
+                                    borderRadius: "50%",
+                                    backgroundColor: dotColors[index % dotColors.length],
+                                    marginTop: "5px",
+                                    flexShrink: 0,
+                                }}
+                            />
+                            {index < experiences.length - 1 && (
+                                <div
+                                    style={{
+                                        width: "1px",
+                                        flex: 1,
+                                        backgroundColor: "#e8eaed",
+                                        marginTop: "6px",
+                                    }}
+                                />
+                            )}
                         </div>
-                        <div
-                            style={{
-                                fontSize: "1.2rem",
-                                color: "#34A853",
-                                marginTop: "0.5rem",
-                                fontWeight: "500",
-                            }}
-                        >
-                            {exp.date}
-                        </div>
-                        <div
-                            style={{
-                                fontSize: "1.2rem",
-                                color: "#FBBC05",
-                                marginTop: "0.5rem",
-                                lineHeight: "1.6",
-                            }}
-                        >
-                            {exp.description}
+
+                        {/* Content */}
+                        <div style={{ paddingBottom: "0.25rem" }}>
+                            <div
+                                style={{
+                                    fontSize: "1rem",
+                                    fontWeight: 600,
+                                    color: "#202124",
+                                    lineHeight: "1.4",
+                                }}
+                            >
+                                {exp.role}{" "}
+                                <span style={{ color: "#5f6368", fontWeight: 400 }}>@ {exp.company}</span>
+                            </div>
+                            <div style={{ fontSize: "0.8rem", color: "#9aa0a6", marginTop: "0.2rem" }}>
+                                {exp.date}
+                            </div>
+                            <div style={{ fontSize: "0.875rem", color: "#5f6368", marginTop: "0.35rem" }}>
+                                {exp.description}
+                            </div>
                         </div>
                     </div>
                 ))}

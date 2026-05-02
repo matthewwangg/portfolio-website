@@ -1,69 +1,60 @@
 export type Project = {
     name: string
     description: string
-    image: string
     repo: string
+    tags: string[]
 }
+
+const G = ["#4285F4", "#EA4335", "#FBBC05", "#34A853"] as const;
+export const googleColor = (i: number) => G[i % G.length];
 
 export const projects: Project[] = [
     {
         name: "Fit Pilot",
-        description: "A Gemini-based AI fitness coach with a React frontend, Go API, Python AI microservice, Postgres database, and Redis cache, deployed to GKE.",
-        image: "/images/fit-pilot.png",
+        description: "Gemini-based AI fitness coach with a Go REST API, Python gRPC AI microservice, PostgreSQL, and Redis cache, deployed to GKE with Terraform and GitHub Actions CI/CD.",
         repo: "https://github.com/matthewwangg/fit-pilot",
-    },
-    {
-        name: "Personal AI Agent",
-        description: "A CLI-based personal AI agent that can answer questions with personal context and accomplish complex multi-stage developer tasks autonomously.",
-        image: "/images/agent.png",
-        repo: "https://github.com/matthewwang/personal-ai-agent",
+        tags: ["Go", "Python", "gRPC", "PostgreSQL", "JWT", "GKE"],
     },
     {
         name: "Vector Database",
-        description: "A performant in-memory vector database built from scratch in C++ with an HNSW index, data persistence via snapshotting and WAL, and replication, deployed to GKE.",
-        image: "/images/database.png",
+        description: "In-memory vector database in C++20 with HNSW and Flat indexes, WAL persistence, primary/replica replication, LRU query cache, and metrics exposed via gRPC.",
         repo: "https://github.com/matthewwangg/vector-database",
+        tags: ["C++20", "gRPC", "HNSW", "WAL", "GKE"],
+    },
+    {
+        name: "Regatta",
+        description: "Distributed key-value store in Go with primary/replica replication via 2PC, WAL-backed persistence, snapshotting, and an OpenTelemetry-instrumented gRPC API.",
+        repo: "https://github.com/matthewwangg/regatta",
+        tags: ["Go", "gRPC", "2PC", "WAL", "Prometheus", "OpenTelemetry"],
+    },
+    {
+        name: "Convoy",
+        description: "gRPC-based message queue in C++ with durable append-only message storage on Truck nodes sharded by topics, a registry for lookup, C++ client library, and TLS.",
+        repo: "https://github.com/matthewwangg/convoy",
+        tags: ["C++20", "gRPC", "Protobuf", "Hashing", "TLS", "Docker"],
     },
     {
         name: "Gateway",
-        description: "A secure API gateway and load balancer built in Go, with service definition parser, service management, configurable load balancer, and secure JWT authentication.",
-        image: "/images/gateway.png",
+        description: "API gateway in Go that load balances HTTP traffic across backends registered via a custom .svc DSL, with round-robin and least-response-time strategies, and health checks.",
         repo: "https://github.com/matthewwangg/gateway",
+        tags: ["Go", "Load Balancer", "DSL Parser", "Docker"],
     },
     {
-        name: "EPL Prediction",
-        description: "Premier League outcome prediction with a React/Node.js web app and a Python machine learning API.",
-        image: "/images/epl-predictor.png",
-        repo: "https://github.com/matthewwangg/epl-prediction",
+        name: "Tempo",
+        description: "Full-stack productivity app with a kanban board, health tracking, analytics, and Google Calendar sync. Go backend with OAuth2/JWT, deployed on GKE with Helm.",
+        repo: "https://github.com/matthewwangg/tempo",
+        tags: ["Go", "PostgreSQL", "OAuth2", "GKE", "Prometheus"],
     },
     {
-        name: "Distributed Key-Value Store",
-        description: "A distributed key-value store in Go with consistent hashing, dynamic peer joins/leaves, in-memory storage, and gRPC communication.",
-        image: "/images/distributed-kv-store.png",
-        repo: "https://github.com/matthewwangg/distributed-kv-store",
+        name: "Fabric",
+        description: "Service mesh for Kubernetes in Go. Sidecar proxies intercept traffic via nftables. gRPC control plane that manages configs, health monitoring, and Prometheus metrics.",
+        repo: "https://github.com/matthewwangg/fabric",
+        tags: ["Go", "gRPC", "Kubernetes", "L4 Proxy", "Prometheus"],
     },
     {
-        name: "gRPC Log Aggregator",
-        description: "A gRPC-based C++ system for collecting, storing, streaming, and querying logs across services.",
-        image: "/images/grpc-log-aggregator.png",
-        repo: "https://github.com/matthewwangg/grpc-log-aggregator",
-    },
-    {
-        name: "Contract Matching System",
-        description: "Let's Technologies contract matching system built with Python, Flask, AWS, Terraform, and Hugging Face models.",
-        image: "/images/lets.png",
-        repo: "https://www.letstribe.app/",
-    },
-    {
-        name: "Note DB",
-        description: "A fast, local-first C++ knowledge base with structured Markdown, full-text indexing, and snapshot-based backup.",
-        image: "/images/note-db.png",
-        repo: "https://github.com/matthewwangg/note-db",
-    },
-    {
-        name: "Paper Trail",
-        description: "A real-time Kanban board and notes app with a React/TypeScript web app and Go REST API.",
-        image: "/images/papertrail.png",
-        repo: "https://github.com/matthewwangg/paper-trail",
+        name: "Imposter",
+        description: "Multi-agent reinforcement learning system in Python built on a custom PettingZoo parallel environment. Agents learn crewmate and imposter roles via REINFORCE and PPO.",
+        repo: "https://github.com/matthewwangg/imposter",
+        tags: ["Python", "PyTorch", "PPO", "REINFORCE", "PettingZoo"],
     },
 ]

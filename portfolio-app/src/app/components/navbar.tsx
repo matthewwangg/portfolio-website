@@ -1,87 +1,59 @@
 "use client";
 
-import { FaInstagram, FaLinkedin, FaGithub, FaHome, FaBriefcase, FaBook, FaFolderOpen } from "react-icons/fa";
-import { useEffect, useState } from "react";
+const links = [
+    { label: "Home", href: "#hero", color: "#4285F4" },
+    { label: "Experience", href: "#work", color: "#EA4335" },
+    { label: "Projects", href: "#projects", color: "#34A853" },
+    { label: "Courses", href: "#courses", color: "#FBBC05" },
+];
 
 function Navbar() {
-    const [isCompact, setIsCompact] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsCompact(window.innerWidth < 659);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
     return (
         <nav
             style={{
                 position: "fixed",
+                top: 0,
+                left: 0,
+                right: 0,
                 zIndex: 1000,
                 display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "space-between",
+                justifyContent: "center",
                 alignItems: "center",
-                padding: "1rem 2rem",
-                background: "#ffffff",
-                width: "100%",
-                boxSizing: "border-box",
-                rowGap: "1rem",
+                padding: "0.875rem 2rem",
+                backgroundColor: "rgba(255,255,255,0.92)",
+                backdropFilter: "blur(8px)",
+                borderBottom: "1px solid #f1f3f4",
+                gap: "2rem",
             }}
         >
-            <div
-                style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    justifyContent: isCompact ? "center" : "flex-start",
-                    alignItems: "center",
-                    gap: "1.25rem",
-                    fontSize: isCompact ? "0" : "1.25rem",
-                    flexGrow: 1,
-                    minWidth: "250px",
-                }}
-            >
-                <a href="#hero" style={{color: "#4285F4", display: "flex", alignItems: "center", gap: "0.4rem"}}>
-                    {isCompact && <FaHome size={28}/>}
-                    {!isCompact && "Home"}
+            {links.map(({ label, href, color }) => (
+                <a
+                    key={href}
+                    href={href}
+                    style={{
+                        fontSize: "0.875rem",
+                        fontWeight: 500,
+                        color: "#5f6368",
+                        textDecoration: "none",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.4rem",
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.color = color)}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#5f6368")}
+                >
+                    <span
+                        style={{
+                            width: "6px",
+                            height: "6px",
+                            borderRadius: "50%",
+                            backgroundColor: color,
+                            flexShrink: 0,
+                        }}
+                    />
+                    {label}
                 </a>
-                <a href="#work" style={{color: "#EA4335", display: "flex", alignItems: "center", gap: "0.4rem"}}>
-                    {isCompact && <FaBriefcase size={28}/>}
-                    {!isCompact && "Work"}
-                </a>
-                <a href="#courses" style={{color: "#FBBC05", display: "flex", alignItems: "center", gap: "0.4rem"}}>
-                    {isCompact && <FaBook size={28}/>}
-                    {!isCompact && "Courses"}
-                </a>
-                <a href="#projects" style={{color: "#34A853", display: "flex", alignItems: "center", gap: "0.4rem"}}>
-                    {isCompact && <FaFolderOpen size={28}/>}
-                    {!isCompact && "Projects"}
-                </a>
-            </div>
-
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: isCompact ? "center" : "flex-end",
-                    alignItems: "center",
-                    gap: "1rem",
-                    minWidth: "200px",
-                    flex: isCompact ? "1 1 100%" : "0 0 auto",
-                }}
-            >
-                <a href="https://instagram.com/matthewiwang" target="_blank">
-                    <FaInstagram size={28} style={{color: "#E4405F"}}/>
-                </a>
-                <a href="https://linkedin.com/in/matthew-wang-cs" target="_blank">
-                    <FaLinkedin size={28} style={{color: "#0077B5"}}/>
-                </a>
-                <a href="https://github.com/matthewwangg" target="_blank">
-                    <FaGithub size={28} style={{color: "#181717"}}/>
-                </a>
-            </div>
+            ))}
         </nav>
     );
 }
