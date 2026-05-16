@@ -35,8 +35,7 @@ export const experiences: Experience[] = [
         company: "RevolutionParts",
         date: "Oct 2024 - May 2025",
         description: "Shipping Profitability",
-    }
-    /*,
+    },
     {
         role: "Undergraduate Teaching Assistant",
         company: "Arizona State University",
@@ -48,5 +47,5 @@ export const experiences: Experience[] = [
         company: "Arizona State University",
         date: "Jan 2024 - May 2024",
         description: "CSE 340 Principles of Programming Languages",
-    }*/
+    }
 ];
