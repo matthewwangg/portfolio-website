@@ -2,7 +2,7 @@
 
 const links = [
     { label: "Home", href: "#hero", color: "#4285F4" },
-    { label: "Experience", href: "#work", color: "#EA4335" },
+    { label: "Work", href: "#work", color: "#EA4335" },
     { label: "Projects", href: "#projects", color: "#34A853" },
     { label: "Courses", href: "#courses", color: "#FBBC05" },
 ];
