@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function Hero() {
     return (
         <section
@@ -25,9 +27,12 @@ function Hero() {
                     flexShrink: 0,
                 }}
             >
-                <img
-                    src="profile.jpg"
+                <Image
+                    src="/profile.jpg"
                     alt="Matt"
+                    width={88}
+                    height={88}
+                    priority
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
             </div>
